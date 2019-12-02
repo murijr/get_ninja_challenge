@@ -17,9 +17,15 @@ class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
 
     private var data: List<Offer>? = null
 
+    private var onClickCallback: ((offer: Offer) -> Unit)? = null
+
     fun updateData(offers: Offers) {
         this.data = offers.offers
         notifyDataSetChanged()
+    }
+
+    fun setOnClick(onClick: (offer: Offer) -> Unit) {
+        this.onClickCallback = onClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
@@ -36,7 +42,14 @@ class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
                 renderCreatedAt(offer, holder)
                 renderAddress(offer, holder)
                 renderIcons(offer, holder)
+                handleOnClick(offer, holder)
             }
+        }
+    }
+
+    private fun handleOnClick(offer: Offer, holder: ViewHolder) {
+        holder.itemView.card.setOnClickListener {
+            onClickCallback?.invoke(offer)
         }
     }
 

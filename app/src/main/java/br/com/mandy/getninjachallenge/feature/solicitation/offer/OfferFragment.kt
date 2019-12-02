@@ -28,10 +28,21 @@ class OfferFragment : Fragment(), OfferContract.View {
         setup()
     }
 
+    private fun handleUI() {
+        observeClickListItem()
+    }
+
+    private fun observeClickListItem() {
+        adapter.setOnClick {
+            return@setOnClick
+        }
+    }
+
     private fun setup() {
         configureAdapter()
         presenter.takeView(this)
         presenter.getOffers()
+        handleUI()
     }
 
     private fun configureAdapter() {
