@@ -6,16 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.mandy.getninjachallenge.R
+import br.com.mandy.getninjachallenge.data.entity.Offer
 import org.koin.android.ext.android.inject
 
-class OfferFragment : Fragment() {
+class OfferFragment : Fragment(), OfferContract.View {
 
-    val presenter: OfferPresenter by inject()
+    private val presenter: OfferContract.Presenter by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        preparePresenter()
         return inflater.inflate(R.layout.fragment_solicitation_available, container, false)
+    }
+
+    private fun preparePresenter() {
+        presenter.takeView(this)
+    }
+
+    override fun showOffers(offers: List<Offer>) {
     }
 }

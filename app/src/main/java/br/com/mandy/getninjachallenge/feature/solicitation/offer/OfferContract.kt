@@ -5,7 +5,7 @@ import br.com.mandy.getninjachallenge.data.entity.Offer
 interface OfferContract {
 
     interface Presenter {
-        fun takeView(view: View)
+        fun takeView(offerView: View)
         fun getOffers()
     }
 
