@@ -13,6 +13,6 @@ class AvailableFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_solicitation, container, false)
+        return inflater.inflate(R.layout.fragment_solicitation_available, container, false)
     }
 }
