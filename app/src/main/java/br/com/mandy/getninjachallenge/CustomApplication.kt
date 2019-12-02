@@ -1,6 +1,7 @@
 package br.com.mandy.getninjachallenge
 
 import android.app.Application
+import br.com.mandy.getninjachallenge.common.di.converterModule
 import br.com.mandy.getninjachallenge.common.di.networkModule
 import br.com.mandy.getninjachallenge.common.di.repositoryModule
 import br.com.mandy.getninjachallenge.feature.solicitation.lead.leadModule
@@ -21,7 +22,7 @@ class CustomApplication: Application() {
     private fun startKoin() {
         startKoin {
             androidContext(this@CustomApplication)
-            modules(networkModule, leadModule, offerModule, repositoryModule)
+            modules(networkModule, leadModule, offerModule, repositoryModule, converterModule)
         }
     }
 

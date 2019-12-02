@@ -9,7 +9,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener
 import org.json.JSONObject
 
 
-class OfferRemoteRepository: OfferRepository {
+class OfferRemoteRepository(private val converter: OfferConverter): OfferRepository {
 
     override fun getOffers(onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
         AndroidNetworking.get("http://testemobile.getninjas.com.br/offers")
@@ -18,7 +18,7 @@ class OfferRemoteRepository: OfferRepository {
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject?) {
-                    val offers = OfferConverter from response
+                    val offers = converter from response
                     onSuccess?.invoke(offers)
                 }
 

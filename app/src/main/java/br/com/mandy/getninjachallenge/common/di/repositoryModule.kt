@@ -7,6 +7,6 @@ import org.koin.dsl.module
 val repositoryModule = module {
 
     factory<OfferRepository> {
-        OfferRemoteRepository()
+        OfferRemoteRepository(get())
     }
 }
