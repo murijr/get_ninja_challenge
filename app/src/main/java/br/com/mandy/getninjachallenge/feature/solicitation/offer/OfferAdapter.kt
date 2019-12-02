@@ -1,7 +1,6 @@
 package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
 import android.annotation.SuppressLint
-import android.icu.text.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,25 +28,49 @@ class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
 
     override fun getItemCount() = data?.size ?: 0
 
-    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         data?.let {
             it[position].let { offer ->
-                holder.itemView.title.text = offer.embedded?.request?.title
-                holder.itemView.name.text = offer.embedded?.request?.embedded?.user?.name
-                holder.itemView.title.text = offer.embedded?.request?.title
-
-                offer.embedded?.request?.createdAt?.let { date ->
-                    holder.itemView.create_at.text =
-                        SimpleDateFormat(DATE_FORMAT_OFFER, Locale.getDefault()).format(date)
-
-                }
-
-                offer.embedded?.request?.embedded?.address?.let { address ->
-                    holder.itemView.address.text = "${address.neighborhood} - ${address.city}"
-                }
+                renderTitle(offer, holder)
+                renderUserName(offer, holder)
+                renderCreatedAt(offer, holder)
+                renderAddress(offer, holder)
+                renderIcons(offer, holder)
             }
+        }
+    }
+
+    private fun renderTitle(offer: Offer, holder: ViewHolder) {
+        holder.itemView.title.text = offer.embedded?.request?.title
+    }
+
+    private fun renderUserName(offer: Offer, holder: ViewHolder) {
+        holder.itemView.name.text = offer.embedded?.request?.embedded?.user?.name
+    }
+
+    private fun renderCreatedAt(offer: Offer, holder: ViewHolder) {
+        offer.embedded?.request?.createdAt?.let { date ->
+            holder.itemView.create_at.text =
+                SimpleDateFormat(DATE_FORMAT_OFFER, Locale.getDefault()).format(date)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun renderAddress(offer: Offer, holder: ViewHolder) {
+        offer.embedded?.request?.embedded?.address?.let { address ->
+            holder.itemView.address.text = "${address.neighborhood} - ${address.city}"
+        }
+    }
+
+    private fun renderIcons(offer: Offer, holder: ViewHolder) {
+        if(offer.state == "read") {
+            holder.itemView.icon_name.setImageResource(R.drawable.ic_person_read_24dp)
+            holder.itemView.icon_created_at.setImageResource(R.drawable.ic_person_read_24dp)
+            holder.itemView.icon_place.setImageResource(R.drawable.ic_place_read_24dp)
+        } else {
+            holder.itemView.icon_name.setImageResource(R.drawable.ic_person_unread_24dp)
+            holder.itemView.icon_created_at.setImageResource(R.drawable.ic_person_unread_24dp)
+            holder.itemView.icon_place.setImageResource(R.drawable.ic_place_unread_24dp)
         }
     }
 

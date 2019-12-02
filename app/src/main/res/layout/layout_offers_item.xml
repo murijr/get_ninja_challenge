@@ -43,9 +43,9 @@
                     android:layout_marginStart="8dp"
                     android:text="Nome do cara"
                     android:textSize="18sp" android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="@+id/imageView"/>
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_name"
+                    app:layout_constraintStart_toEndOf="@+id/icon_name"
+                    app:layout_constraintTop_toTopOf="@+id/icon_name"/>
             <TextView
                     android:id="@+id/create_at"
                     android:layout_width="wrap_content"
@@ -60,28 +60,28 @@
                     android:layout_marginStart="8dp"
                     android:text="Vila Leopoldina"
                     android:textSize="18sp" android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4"/>
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_place"
+                    app:layout_constraintStart_toEndOf="@+id/icon_place"
+                    app:layout_constraintTop_toTopOf="@+id/icon_place"/>
             <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/icon_name"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView3"
                     app:srcCompat="@drawable/ic_person_unread_24dp"/>
             <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/icon_created_at"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/create_at"
                     app:layout_constraintEnd_toStartOf="@+id/create_at" app:layout_constraintTop_toTopOf="@+id/create_at"
                     app:srcCompat="@drawable/ic_person_unread_24dp"/>
             <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/icon_place"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:layout_marginStart="16dp" android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/icon_name"
                     app:srcCompat="@drawable/ic_place_unread_24dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
