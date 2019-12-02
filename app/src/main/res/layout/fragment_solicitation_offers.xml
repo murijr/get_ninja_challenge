@@ -8,4 +8,6 @@
                                                    tools:context=".feature.solicitation.offer.OfferFragment">
 
 
+    <include layout="@layout/layout_offers_item"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
