@@ -1,27 +1,29 @@
 package br.com.mandy.getninjachallenge.data.repository.offer
 
-import br.com.mandy.getninjachallenge.data.entity.Offer
+import br.com.mandy.getninjachallenge.common.converter.OfferConverter
+import br.com.mandy.getninjachallenge.data.entity.Offers
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
-import com.androidnetworking.interfaces.JSONArrayRequestListener
-import org.json.JSONArray
+import com.androidnetworking.interfaces.JSONObjectRequestListener
+import org.json.JSONObject
 
 
 class OfferRemoteRepository: OfferRepository {
 
-    override fun getOffers(onSuccess: ((List<Offer>) -> Unit)?, onError: ((Throwable) -> Unit)?) {
+    override fun getOffers(onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
         AndroidNetworking.get("http://testemobile.getninjas.com.br/offers")
             .setTag("getOffers")
             .setPriority(Priority.LOW)
             .build()
-            .getAsJSONArray(object : JSONArrayRequestListener {
-                override fun onResponse(response: JSONArray) {
-                    return
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject?) {
+                    val offers = OfferConverter from response
+                    onSuccess?.invoke(offers)
                 }
 
-                override fun onError(error: ANError) {
-                    return
+                override fun onError(anError: ANError?) {
+                    onError?.invoke(anError as Exception)
                 }
             })
     }

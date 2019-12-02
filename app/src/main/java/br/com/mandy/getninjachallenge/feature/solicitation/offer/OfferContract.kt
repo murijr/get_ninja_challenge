@@ -1,6 +1,6 @@
 package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
-import br.com.mandy.getninjachallenge.data.entity.Offer
+import br.com.mandy.getninjachallenge.data.entity.Offers
 
 interface OfferContract {
 
@@ -10,6 +10,6 @@ interface OfferContract {
     }
 
     interface View {
-        fun showOffers(offers: List<Offer>)
+        fun showOffers(offers: Offers)
     }
 }

@@ -10,5 +10,8 @@ class OfferPresenter(private val offerRepository: OfferRepository,
     }
 
     override fun getOffers() {
+        offerRepository.getOffers({
+            view?.showOffers(it)
+        })
     }
 }
