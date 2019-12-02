@@ -10,17 +10,18 @@ import org.json.JSONArray
 
 class OfferRemoteRepository: OfferRepository {
 
-    override fun getOffers(onSuccess: (List<Offer>) -> Unit, onError: (Throwable) -> Unit) {
+    override fun getOffers(onSuccess: ((List<Offer>) -> Unit)?, onError: ((Throwable) -> Unit)?) {
         AndroidNetworking.get("http://testemobile.getninjas.com.br/offers")
             .setTag("getOffers")
             .setPriority(Priority.LOW)
             .build()
             .getAsJSONArray(object : JSONArrayRequestListener {
                 override fun onResponse(response: JSONArray) {
-
+                    return
                 }
 
                 override fun onError(error: ANError) {
+                    return
                 }
             })
     }
