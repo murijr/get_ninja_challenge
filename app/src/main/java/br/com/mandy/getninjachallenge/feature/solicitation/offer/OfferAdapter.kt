@@ -1,10 +1,10 @@
-package br.com.mandy.getninjachallenge.feature.solicitation.available
+package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class AvailableAdapter: RecyclerView.Adapter<AvailableAdapter.ViewHolder>() {
+class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

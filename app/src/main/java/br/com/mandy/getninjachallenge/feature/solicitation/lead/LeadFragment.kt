@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.solicitation.accepted
+package br.com.mandy.getninjachallenge.feature.solicitation.lead
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.mandy.getninjachallenge.R
 
-class AcceptedFragment : Fragment() {
+class LeadFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

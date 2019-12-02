@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import br.com.mandy.getninjachallenge.R
-import br.com.mandy.getninjachallenge.feature.solicitation.accepted.AcceptedFragment
-import br.com.mandy.getninjachallenge.feature.solicitation.available.AvailableFragment
+import br.com.mandy.getninjachallenge.feature.solicitation.lead.LeadFragment
+import br.com.mandy.getninjachallenge.feature.solicitation.offer.OfferFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_title_text_available,
@@ -17,8 +17,8 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager): F
 ) {
 
     override fun getItem(position: Int) = when(position) {
-        0 -> AvailableFragment()
-        else -> AcceptedFragment()
+        0 -> OfferFragment()
+        else -> LeadFragment()
     }
 
     override fun getPageTitle(position: Int) = context.resources.getString(TAB_TITLES[position])

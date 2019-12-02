@@ -1,8 +1,8 @@
-package br.com.mandy.getninjachallenge.feature.solicitation.available
+package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
-class AvailablePresenter: AvailableContract.Presenter {
+class OfferPresenter: OfferContract.Presenter {
 
-    override fun takeView(view: AvailableContract.View) {
+    override fun takeView(view: OfferContract.View) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

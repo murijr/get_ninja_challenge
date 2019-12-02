@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.solicitation.available
+package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import br.com.mandy.getninjachallenge.R
 import org.koin.android.ext.android.inject
 
-class AvailableFragment : Fragment() {
+class OfferFragment : Fragment() {
 
-    val presenter: AvailablePresenter by inject()
+    val presenter: OfferPresenter by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
