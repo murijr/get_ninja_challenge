@@ -12,7 +12,7 @@ import org.json.JSONObject
 class OfferRemoteRepository(private val converter: OfferConverter): OfferRepository {
 
     override fun getOffers(onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
-        AndroidNetworking.get("http://testemobile.getninjas.com.br/offers")
+        AndroidNetworking.get("https://testemobile.getninjas.com.br/offers")
             .setTag("getOffers")
             .setPriority(Priority.LOW)
             .build()
