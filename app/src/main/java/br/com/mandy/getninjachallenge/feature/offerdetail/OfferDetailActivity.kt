@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.Offer
+import org.koin.android.ext.android.inject
 
 class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
+
+    val presenter: OfferDetailContract.Presenter by inject()
 
     val offerDetailURL: String by lazy {
         this.intent.getStringExtra(EXTRA_OFFER_DETAIL_URL)
