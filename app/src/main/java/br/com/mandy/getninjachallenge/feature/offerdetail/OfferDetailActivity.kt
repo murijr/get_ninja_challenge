@@ -10,15 +10,24 @@ import org.koin.android.ext.android.inject
 
 class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
 
-    val presenter: OfferDetailContract.Presenter by inject()
+    private val presenter: OfferDetailContract.Presenter by inject()
 
-    val offerDetailURL: String by lazy {
+    private val offerDetailURL: String by lazy {
         this.intent.getStringExtra(EXTRA_OFFER_DETAIL_URL)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_offer_detail)
+        setup()
+    }
+
+    private fun setup() {
+        presenter.takeView(this)
+        presenter.getOfferDetail(offerDetailURL)
+    }
+
+    override fun showOfferDetail() {
     }
 
     companion object {
@@ -28,8 +37,5 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
             intent.putExtra(EXTRA_OFFER_DETAIL_URL, offer.links?.self?.href)
             context.startActivity(intent)
         }
-    }
-
-    override fun showOfferDetail() {
     }
 }
