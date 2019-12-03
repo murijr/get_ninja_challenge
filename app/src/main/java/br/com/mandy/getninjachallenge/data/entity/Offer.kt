@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class Offer: Serializable {
+class Offer {
     @SerializedName("state")
     @Expose
     var state: String? = null
