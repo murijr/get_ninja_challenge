@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">GetNinjaChallenge</string>
     <string name="title_activity_solicitation">Pedidos</string>
+    <string name="title_activity_offer_detail">Oferta</string>
     <string name="tab_title_text_available">DISPONÍVEIS</string>
     <string name="tab_title_text_accepted">ACEITOS</string>
 </resources>
