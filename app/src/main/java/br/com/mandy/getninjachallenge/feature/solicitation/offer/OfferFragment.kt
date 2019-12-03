@@ -34,8 +34,8 @@ class OfferFragment : Fragment(), OfferContract.View {
     }
 
     private fun observeClickListItem() {
-        adapter.setOnClick {
-            this.context?.let { OfferDetailActivity.startActivity(it) }
+        adapter.setOnClick { offer ->
+            this.context?.let { OfferDetailActivity.startActivity(it, offer) }
         }
     }
 
