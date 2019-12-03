@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.Offers
+import br.com.mandy.getninjachallenge.feature.offerdetail.OfferDetailActivity
 import kotlinx.android.synthetic.main.fragment_solicitation_offers.*
 import org.koin.android.ext.android.inject
 
@@ -34,7 +35,7 @@ class OfferFragment : Fragment(), OfferContract.View {
 
     private fun observeClickListItem() {
         adapter.setOnClick {
-            return@setOnClick
+            this.context?.let { OfferDetailActivity.startActivity(it) }
         }
     }
 
