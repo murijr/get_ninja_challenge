@@ -13,11 +13,11 @@ class OfferDetail {
     @SerializedName("title")
     @Expose
     var title: String? = null
-    @SerializedName("_embedded")
+    @SerializedName("_embeddedOfferDetail")
     @Expose
-    var embedded: Embedded? = null
-    @SerializedName("_links")
+    var embeddedOfferDetail: EmbeddedOfferDetail? = null
+    @SerializedName("_linksOfferDetail")
     @Expose
-    var links: Links? = null
+    var linksOfferDetail: LinksOfferDetail? = null
 
 }

@@ -29,6 +29,7 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     override fun showOfferDetail(offerDetail: OfferDetail) {
+        return
     }
 
     companion object {
