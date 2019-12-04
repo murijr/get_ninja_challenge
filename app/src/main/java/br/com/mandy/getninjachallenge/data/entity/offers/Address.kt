@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.data.entity
+package br.com.mandy.getninjachallenge.data.entity.offers
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -13,4 +13,5 @@ class Address {
     @SerializedName("uf")
     @Expose
     var uf: String? = null
+
 }

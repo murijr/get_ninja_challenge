@@ -1,9 +1,9 @@
-package br.com.mandy.getninjachallenge.data.entity
+package br.com.mandy.getninjachallenge.data.entity.offerdetail
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class AddressOfferDetail {
+class Address {
     @SerializedName("city")
     @Expose
     var city: String? = null
@@ -13,8 +13,8 @@ class AddressOfferDetail {
     @SerializedName("uf")
     @Expose
     var uf: String? = null
-    @SerializedName("geolocationAddressOfferDetail")
+    @SerializedName("geolocation")
     @Expose
-    var geolocationAddressOfferDetail: GeolocationAddressOfferDetail? = null
+    var geolocation: Geolocation? = null
 
 }

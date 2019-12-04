@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.data.entity
+package br.com.mandy.getninjachallenge.data.entity.offerdetail
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -13,11 +13,11 @@ class OfferDetail {
     @SerializedName("title")
     @Expose
     var title: String? = null
-    @SerializedName("_embeddedOfferDetail")
+    @SerializedName("_embedded")
     @Expose
-    var embeddedOfferDetail: EmbeddedOfferDetail? = null
-    @SerializedName("_linksOfferDetail")
+    var embedded: Embedded? = null
+    @SerializedName("_links")
     @Expose
-    var linksOfferDetail: LinksOfferDetail? = null
+    var links: Links? = null
 
 }
