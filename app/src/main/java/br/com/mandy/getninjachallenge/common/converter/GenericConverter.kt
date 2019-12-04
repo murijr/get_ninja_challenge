@@ -5,11 +5,11 @@ import com.google.gson.Gson
 import com.google.gson.JsonParser
 import org.json.JSONObject
 
-class OfferConverter(private val gson: Gson) {
+class GenericConverter(val gson: Gson) {
 
-    infix fun from(jsonObject: JSONObject?): Offers {
+    inline fun <reified OUT> from(jsonObject: JSONObject?): OUT {
         val jsonString = jsonObject.toString()
         val json = JsonParser.parseString(jsonString)
-        return gson.fromJson<Offers>(json, Offers::class.java)
+        return this.gson.fromJson<Offers>(json, OUT::class.java) as OUT
     }
 }

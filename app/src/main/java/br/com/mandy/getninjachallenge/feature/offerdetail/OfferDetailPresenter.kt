@@ -10,5 +10,8 @@ class OfferDetailPresenter(private val offerRepository: OfferRepository,
     }
 
     override fun getOfferDetail(offerDetailURL: String) {
+        offerRepository.getOffersDetail(offerDetailURL, { offerDetail ->
+            this.view?.showOfferDetail(offerDetail)
+        })
     }
 }

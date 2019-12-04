@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.Offer
+import br.com.mandy.getninjachallenge.data.entity.OfferDetail
 import org.koin.android.ext.android.inject
 
 class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
@@ -27,7 +28,7 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         presenter.getOfferDetail(offerDetailURL)
     }
 
-    override fun showOfferDetail() {
+    override fun showOfferDetail(offerDetail: OfferDetail) {
     }
 
     companion object {

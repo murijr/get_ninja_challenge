@@ -1,5 +1,7 @@
 package br.com.mandy.getninjachallenge.feature.offerdetail
 
+import br.com.mandy.getninjachallenge.data.entity.OfferDetail
+
 interface OfferDetailContract {
     interface Presenter {
         fun takeView(offerDetailView: View)
@@ -7,6 +9,6 @@ interface OfferDetailContract {
     }
 
     interface View {
-        fun showOfferDetail()
+        fun showOfferDetail(offerDetail: OfferDetail)
     }
 }
