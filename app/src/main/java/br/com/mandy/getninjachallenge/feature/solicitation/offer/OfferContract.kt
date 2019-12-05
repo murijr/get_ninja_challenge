@@ -1,6 +1,6 @@
 package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
-import br.com.mandy.getninjachallenge.data.entity.Offers
+import br.com.mandy.getninjachallenge.data.entity.offers.Offers
 
 interface OfferContract {
 

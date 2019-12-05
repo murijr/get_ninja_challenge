@@ -1,6 +1,7 @@
 package br.com.mandy.getninjachallenge.feature.offerdetail
 
-import br.com.mandy.getninjachallenge.data.entity.OfferDetail
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
+
 
 interface OfferDetailContract {
     interface Presenter {

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.common.DATE_FORMAT_OFFER
-import br.com.mandy.getninjachallenge.data.entity.Offer
-import br.com.mandy.getninjachallenge.data.entity.Offers
+import br.com.mandy.getninjachallenge.data.entity.offers.Offer
+import br.com.mandy.getninjachallenge.data.entity.offers.Offers
 import kotlinx.android.synthetic.main.layout_offers_item.view.*
 import java.text.SimpleDateFormat
 import java.util.*

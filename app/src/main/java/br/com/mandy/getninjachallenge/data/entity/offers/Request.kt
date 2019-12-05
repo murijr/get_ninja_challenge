@@ -2,11 +2,12 @@ package br.com.mandy.getninjachallenge.data.entity.offers
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 class Request {
     @SerializedName("created_at")
     @Expose
-    var createdAt: String? = null
+    var createdAt: Date? = null
     @SerializedName("title")
     @Expose
     var title: String? = null

@@ -2,6 +2,7 @@ package br.com.mandy.getninjachallenge.data.entity.offerdetail
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.ArrayList
 
 class Info {
     @SerializedName("label")
@@ -9,6 +10,6 @@ class Info {
     var label: String? = null
     @SerializedName("value")
     @Expose
-    var value: String? = null
+    var value: ArrayList<String>? = arrayListOf()
 
 }

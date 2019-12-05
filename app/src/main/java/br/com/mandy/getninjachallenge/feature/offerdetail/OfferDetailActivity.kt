@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.mandy.getninjachallenge.R
-import br.com.mandy.getninjachallenge.data.entity.Offer
-import br.com.mandy.getninjachallenge.data.entity.OfferDetail
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
+import br.com.mandy.getninjachallenge.data.entity.offers.Offer
 import org.koin.android.ext.android.inject
 
 class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {

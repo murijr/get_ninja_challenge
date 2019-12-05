@@ -1,8 +1,8 @@
 package br.com.mandy.getninjachallenge.data.repository.offer
 
 import br.com.mandy.getninjachallenge.common.converter.GenericConverter
-import br.com.mandy.getninjachallenge.data.entity.OfferDetail
-import br.com.mandy.getninjachallenge.data.entity.Offers
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
+import br.com.mandy.getninjachallenge.data.entity.offers.Offers
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
