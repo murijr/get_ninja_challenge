@@ -5,6 +5,20 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/default_bg_color"
         tools:context=".feature.offerdetail.OfferDetailActivity">
+
+
+    <ImageView android:id="@+id/offer_map" android:layout_width="0dp" android:layout_height="150dp"
+               android:layout_marginTop="16dp"
+               android:scaleType="centerCrop"
+               app:layout_constraintEnd_toStartOf="@+id/guideline2"
+               app:layout_constraintStart_toStartOf="@+id/guideline" app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline" android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content" android:orientation="vertical"
+                                                app:layout_constraintGuide_begin="@dimen/default_layout_margin_left_right"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline2" android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content" android:orientation="vertical"
+                                                app:layout_constraintGuide_end="@dimen/default_layout_margin_left_right"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
