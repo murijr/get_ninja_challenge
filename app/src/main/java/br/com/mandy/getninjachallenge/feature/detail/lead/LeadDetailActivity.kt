@@ -7,18 +7,30 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
+import br.com.mandy.getninjachallenge.common.ExternalCall
 import br.com.mandy.getninjachallenge.data.entity.leaddetail.Address
 import br.com.mandy.getninjachallenge.data.entity.leaddetail.Info
 import br.com.mandy.getninjachallenge.data.entity.leaddetail.LeadDetail
 import br.com.mandy.getninjachallenge.data.entity.leaddetail.User
 import br.com.mandy.getninjachallenge.data.entity.leads.Lead
-import kotlinx.android.synthetic.main.activity_offer_detail.*
+import kotlinx.android.synthetic.main.activity_lead_detail.*
+import kotlinx.android.synthetic.main.activity_offer_detail.btn_call
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_address
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_detail_email
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_detail_list
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_detail_tel
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_distance
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_map
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_name
+import kotlinx.android.synthetic.main.activity_offer_detail.offer_title
 import org.koin.android.ext.android.inject
+
 
 class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
 
     private val presenter: LeadDetailContract.Presenter by inject()
     private val adapter: LeadDetailInfoValueAdapter by inject()
+    private val externalCall: ExternalCall by inject()
 
     private val leadDetailURL: String by lazy {
         this.intent.getStringExtra(EXTRA_OFFER_DETAIL_URL)
@@ -38,6 +50,16 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
     }
 
     private fun handleUI() {
+        handleOnClickDialBtn()
+        handleOnClickWhatsAppBtn()
+    }
+
+    private fun handleOnClickDialBtn() {
+        btn_call.setOnClickListener { externalCall.performPhoneCall(offer_detail_tel.text.toString()) }
+    }
+
+    private fun handleOnClickWhatsAppBtn() {
+        btn_whatsapp.setOnClickListener { externalCall.sendMessageWithWhatsApp(offer_detail_tel.text.toString()) }
     }
 
     private fun configureAdapter() {
