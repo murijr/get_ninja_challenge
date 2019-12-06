@@ -1,5 +1,6 @@
 package br.com.mandy.getninjachallenge.feature.offerdetail
 
+import android.graphics.Bitmap
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 
 
@@ -11,5 +12,6 @@ interface OfferDetailContract {
 
     interface View {
         fun showOfferDetail(offerDetail: OfferDetail)
+        fun showOfferMap(map: Bitmap)
     }
 }

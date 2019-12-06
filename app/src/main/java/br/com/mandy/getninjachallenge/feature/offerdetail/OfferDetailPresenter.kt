@@ -12,6 +12,11 @@ class OfferDetailPresenter(private val offerRepository: OfferRepository,
     override fun getOfferDetail(offerDetailURL: String) {
         offerRepository.getOffersDetail(offerDetailURL, { offerDetail ->
             this.view?.showOfferDetail(offerDetail)
+            offerDetail.embedded?.address?.geolocation?.let {
+                offerRepository.getOfferMap(it, { bitmap ->
+                    this.view?.showOfferMap(bitmap)
+                })
+            }
         })
     }
 }
