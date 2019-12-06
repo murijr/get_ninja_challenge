@@ -1,6 +1,5 @@
 package br.com.mandy.getninjachallenge.feature.offerdetail
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap

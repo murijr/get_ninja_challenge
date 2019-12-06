@@ -27,7 +27,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/icon_name" app:srcCompat="@drawable/ic_place_unread_24dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/icon_name"
+                    app:srcCompat="@drawable/ic_place_unread_24dp"/>
             <TextView
                     android:id="@+id/offer_address"
                     android:layout_width="wrap_content"
@@ -36,7 +37,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/icon_place3"
-                    app:layout_constraintStart_toEndOf="@+id/icon_place3" app:layout_constraintTop_toTopOf="@+id/icon_place3"
+                    app:layout_constraintStart_toEndOf="@+id/icon_place3"
+                    app:layout_constraintTop_toTopOf="@+id/icon_place3"
                     tools:text="Vila Leopoldina"/>
             <TextView
                     android:id="@+id/offer_title"
@@ -60,6 +62,19 @@
                     app:layout_constraintHorizontal_bias="0.493"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/offer_title"/>
+
+            <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layerType="software"
+                    android:src="@drawable/dotted_bg"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/offer_distance"/>
 
             <ImageView
                     android:id="@+id/icon_name"
@@ -97,12 +112,12 @@
                                                         app:layout_constraintGuide_end="@dimen/default_layout_margin_left_right"/>
             <TextView
                     android:id="@+id/offer_distance"
-                    tools:text="100"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     app:layout_constraintStart_toStartOf="@+id/offer_address"
-                    app:layout_constraintTop_toBottomOf="@+id/offer_address"/>
+                    app:layout_constraintTop_toBottomOf="@+id/offer_address"
+                    tools:text="100"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
