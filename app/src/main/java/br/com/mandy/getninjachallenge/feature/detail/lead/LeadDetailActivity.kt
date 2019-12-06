@@ -80,7 +80,7 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
     }
 
     private fun displayOfferInfo(info: List<Info>?) {
-        adapter.updateData(info.orEmpty())
+        adapter.updateData(info.orEmpty(), true)
     }
 
     companion object {
