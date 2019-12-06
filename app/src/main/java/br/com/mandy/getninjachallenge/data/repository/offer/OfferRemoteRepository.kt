@@ -19,8 +19,8 @@ import kotlin.concurrent.thread
 
 class OfferRemoteRepository(private val converter: GenericConverter): OfferRepository {
 
-    override fun getOffers(onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
-        AndroidNetworking.get(OFFERS_LIST_URL)
+    override fun getOffers(offerListUrl: String?, onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
+        AndroidNetworking.get(offerListUrl)
             .setTag("getOffers")
             .setPriority(Priority.LOW)
             .build()

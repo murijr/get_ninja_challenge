@@ -30,10 +30,17 @@ class OfferFragment : Fragment(), OfferContract.View {
     }
 
     private fun handleUI() {
-        observeClickListItem()
+        handleClickListItem()
+        handleRefreshData()
     }
 
-    private fun observeClickListItem() {
+    private fun handleRefreshData() {
+        refresh.setOnRefreshListener {
+            presenter.getOffers()
+        }
+    }
+
+    private fun handleClickListItem() {
         adapter.setOnClick { offer ->
             this.context?.let { OfferDetailActivity.startActivity(it, offer) }
         }
@@ -52,6 +59,7 @@ class OfferFragment : Fragment(), OfferContract.View {
     }
 
     override fun showOffers(offers: Offers) {
+        refresh.isRefreshing = false
         adapter.updateData(offers)
     }
 }

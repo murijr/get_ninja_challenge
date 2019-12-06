@@ -10,7 +10,7 @@ class OfferPresenter(private val offerRepository: OfferRepository,
     }
 
     override fun getOffers() {
-        offerRepository.getOffers({
+        offerRepository.getOffers(onSuccess = {
             view?.showOffers(it)
         })
     }
