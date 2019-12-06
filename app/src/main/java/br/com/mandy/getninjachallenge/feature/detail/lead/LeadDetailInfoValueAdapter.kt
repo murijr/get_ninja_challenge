@@ -1,14 +1,14 @@
-package br.com.mandy.getninjachallenge.feature.detail.offer
+package br.com.mandy.getninjachallenge.feature.detail.lead
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mandy.getninjachallenge.R
-import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
+import br.com.mandy.getninjachallenge.data.entity.leaddetail.Info
 import kotlinx.android.synthetic.main.layout_offer_detail_info_item.view.*
 
-class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdapter.ViewHolder>() {
+class LeadDetailInfoValueAdapter: RecyclerView.Adapter<LeadDetailInfoValueAdapter.ViewHolder>() {
 
     private var data: List<Info>? = null
 

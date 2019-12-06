@@ -1,13 +1,13 @@
-package br.com.mandy.getninjachallenge.feature.detail.offer
+package br.com.mandy.getninjachallenge.feature.detail.lead
 
-import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
+import br.com.mandy.getninjachallenge.data.entity.leaddetail.Info
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import java.lang.reflect.Type
 
-class InfoValueTypeAdapter: JsonDeserializer<Info> {
+class LeadDetailInfoValueTypeAdapter: JsonDeserializer<Info> {
     override fun deserialize(json: JsonElement?, typeOfT: Type?, context: JsonDeserializationContext?): Info {
 
         val valueField = (json as JsonObject).get("value")

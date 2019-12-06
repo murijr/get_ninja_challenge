@@ -2,11 +2,10 @@ package br.com.mandy.getninjachallenge.data.repository.lead
 
 import android.graphics.Bitmap
 import br.com.mandy.getninjachallenge.common.LEADS_LIST_URL
-import br.com.mandy.getninjachallenge.common.OFFERS_LIST_URL
 import br.com.mandy.getninjachallenge.common.converter.GenericConverter
+import br.com.mandy.getninjachallenge.data.entity.leaddetail.Geolocation
+import br.com.mandy.getninjachallenge.data.entity.leaddetail.LeadDetail
 import br.com.mandy.getninjachallenge.data.entity.leads.Leads
-import br.com.mandy.getninjachallenge.data.entity.offerdetail.Geolocation
-import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -36,8 +35,8 @@ class LeadRemoteRepository(private val converter: GenericConverter):
     }
 
     override fun getLeadsDetail(
-        offerDetailURL: String,
-        onSuccess: ((OfferDetail) -> Unit)?,
+        leadDetailURL: String,
+        onSuccess: ((LeadDetail) -> Unit)?,
         onError: ((Throwable) -> Unit)?
     ) {
     }

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.leads.Leads
+import br.com.mandy.getninjachallenge.feature.detail.lead.LeadDetailActivity
 import kotlinx.android.synthetic.main.fragment_solicitation_accepted.*
 import kotlinx.android.synthetic.main.fragment_solicitation_offers.*
 import org.koin.android.ext.android.inject
@@ -34,8 +35,8 @@ class LeadFragment : Fragment(), LeadContract.View {
     }
 
     private fun observeClickListItem() {
-        adapter.setOnClick { offer ->
-
+        adapter.setOnClick { lead ->
+            this.context?.let { LeadDetailActivity.startActivity(it, lead) }
         }
     }
 
