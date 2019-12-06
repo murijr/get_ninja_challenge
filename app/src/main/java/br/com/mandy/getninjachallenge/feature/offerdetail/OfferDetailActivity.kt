@@ -34,6 +34,20 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         configureAdapter()
         presenter.takeView(this)
         presenter.getOfferDetail(offerDetailURL)
+        handleUI()
+    }
+
+    private fun handleUI() {
+        handleOnClickAcceptBtn()
+        handleOnClickRefuseBtn()
+    }
+
+    private fun handleOnClickRefuseBtn() {
+        btn_refuse.setOnClickListener { finishAfterTransition() }
+    }
+
+    private fun handleOnClickAcceptBtn() {
+        btn_accept.setOnClickListener { presenter.acceptOffer() }
     }
 
     private fun configureAdapter() {

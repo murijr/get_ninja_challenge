@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
 import br.com.mandy.getninjachallenge.data.entity.offers.Offer
+import kotlinx.android.synthetic.main.activity_offer_detail.view.*
 import kotlinx.android.synthetic.main.layout_offer_detail_info_item.view.*
 import kotlinx.android.synthetic.main.layout_offers_item.view.*
 
@@ -14,15 +15,21 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
 
     private var data: List<Info>? = null
 
-    private var onClickCallback: ((offer: Offer) -> Unit)? = null
+    private var onAcceptBtnClickCallback: (() -> Unit)? = null
+
+    private var onRefuseBtnClickCallback: (() -> Unit)? = null
 
     fun updateData(offerDetailInfo: List<Info>) {
         this.data = offerDetailInfo
         notifyDataSetChanged()
     }
 
-    fun setOnClick(onClick: (offer: Offer) -> Unit) {
-        this.onClickCallback = onClick
+    fun setOnAcceptOfferClick(onAcceptClick: () -> Unit) {
+        this.onAcceptBtnClickCallback = onAcceptClick
+    }
+
+    fun setOnRefuseOfferClick(onRefuseClick: () -> Unit) {
+        this.onRefuseBtnClickCallback = onRefuseClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)

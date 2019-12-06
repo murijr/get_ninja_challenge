@@ -2,10 +2,14 @@ package br.com.mandy.getninjachallenge.feature.offerdetail
 
 import br.com.mandy.getninjachallenge.common.extension.distanceInkm
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Geolocation
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 import br.com.mandy.getninjachallenge.data.repository.offer.OfferRepository
 
 class OfferDetailPresenter(private val offerRepository: OfferRepository,
-                           private var view: OfferDetailContract.View? = null): OfferDetailContract.Presenter {
+                           private var view: OfferDetailContract.View? = null,
+                           private var offerDetail: OfferDetail? = null): OfferDetailContract.Presenter {
+
+
 
     override fun takeView(offerDetailView: OfferDetailContract.View) {
         this.view = offerDetailView
@@ -13,10 +17,17 @@ class OfferDetailPresenter(private val offerRepository: OfferRepository,
 
     override fun getOfferDetail(offerDetailURL: String) {
         offerRepository.getOffersDetail(offerDetailURL, { offerDetail ->
+            this.offerDetail = offerDetail
             this.view?.showOfferDetail(offerDetail)
             showMapAtView(offerDetail.embedded?.address?.geolocation)
             showDistanceAtView(offerDetail.distanceInkm)
         })
+    }
+
+    override fun acceptOffer() {
+        offerDetail?.let {
+            getOfferDetail(it.links?.accept?.href.orEmpty())
+        }
     }
 
     private fun showMapAtView(geolocation: Geolocation?) {

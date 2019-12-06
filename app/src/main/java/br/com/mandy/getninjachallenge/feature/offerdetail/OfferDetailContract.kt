@@ -8,6 +8,7 @@ interface OfferDetailContract {
     interface Presenter {
         fun takeView(offerDetailView: View)
         fun getOfferDetail(offerDetailURL: String)
+        fun acceptOffer()
     }
 
     interface View {
