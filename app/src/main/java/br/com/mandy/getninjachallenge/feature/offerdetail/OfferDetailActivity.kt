@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Address
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 import br.com.mandy.getninjachallenge.data.entity.offers.Offer
 import kotlinx.android.synthetic.main.activity_offer_detail.*
@@ -35,6 +36,7 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     private fun configureAdapter() {
+        offer_detail_list.isNestedScrollingEnabled = false
         offer_detail_list.adapter = adapter
         offer_detail_list.layoutManager = LinearLayoutManager(this)
     }
@@ -43,6 +45,7 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         renderTitle(offerDetail.title)
         renderName(offerDetail.embedded?.user?.name)
         renderAddress(offerDetail.embedded?.address)
+        renderOfferInfo(offerDetail.embedded?.info)
     }
 
     override fun showOfferMap(map: Bitmap) {
@@ -63,6 +66,10 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
 
     private fun renderName(name: String?) {
         offer_name.text = name
+    }
+
+    private fun renderOfferInfo(info: List<Info>?) {
+        adapter.updateData(info.orEmpty())
     }
 
     companion object {

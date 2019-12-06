@@ -11,11 +11,11 @@ import kotlinx.android.synthetic.main.layout_offers_item.view.*
 
 class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdapter.ViewHolder>() {
 
-    private var data: Info? = null
+    private var data: List<Info>? = null
 
     private var onClickCallback: ((offer: Offer) -> Unit)? = null
 
-    fun updateData(offerDetailInfo: Info) {
+    fun updateData(offerDetailInfo: List<Info>) {
         this.data = offerDetailInfo
         notifyDataSetChanged()
     }
@@ -27,9 +27,9 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
             = ViewHolder(
         LayoutInflater.from(parent.context)
-            .inflate(R.layout.layout_offers_item, parent, false))
+            .inflate(R.layout.layout_offer_detail_info_item, parent, false))
 
-    override fun getItemCount() = data?.value?.size ?: 0
+    override fun getItemCount() = data?.size ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         data?.let {
