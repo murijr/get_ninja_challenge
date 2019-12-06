@@ -4,4 +4,5 @@
     <string name="title_activity_offer_detail">Oferta</string>
     <string name="tab_title_text_available">DISPONÍVEIS</string>
     <string name="tab_title_text_accepted">ACEITOS</string>
+    <string name="text_distance_km">a %s Km de você</string>
 </resources>

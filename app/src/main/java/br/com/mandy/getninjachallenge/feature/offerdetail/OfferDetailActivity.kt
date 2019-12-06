@@ -43,7 +43,7 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     override fun showOfferDistance(distance: String) {
-        runOnUiThread {  }
+        runOnUiThread { offer_distance.text = String.format(getString(R.string.text_distance_km), distance) }
     }
 
     private fun renderTitle(title: String?) {
