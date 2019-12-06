@@ -36,23 +36,6 @@ class OfferRemoteRepository(private val converter: GenericConverter): OfferRepos
             })
     }
 
-    override fun getLeads(onSuccess: ((Leads) -> Unit)?, onError: ((Throwable) -> Unit)?) {
-        AndroidNetworking.get(LEADS_LIST_URL)
-            .setTag("getLeads")
-            .setPriority(Priority.LOW)
-            .build()
-            .getAsJSONObject(object : JSONObjectRequestListener {
-                override fun onResponse(response: JSONObject?) {
-                    val leads = converter.from<Leads>(response)
-                    onSuccess?.invoke(leads)
-                }
-
-                override fun onError(anError: ANError?) {
-                    onError?.invoke(anError as Exception)
-                }
-            })
-    }
-
     override fun getOffersDetail(
         offerDetailURL: String, onSuccess: ((OfferDetail) -> Unit)?, onError: ((Throwable) -> Unit)?) {
 
