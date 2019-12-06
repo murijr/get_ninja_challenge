@@ -13,5 +13,6 @@ interface OfferDetailContract {
     interface View {
         fun showOfferDetail(offerDetail: OfferDetail)
         fun showOfferMap(map: Bitmap)
+        fun showOfferDistance(distance: String)
     }
 }

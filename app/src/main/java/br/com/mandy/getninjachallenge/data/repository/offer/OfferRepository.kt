@@ -11,5 +11,5 @@ interface OfferRepository {
     fun getOffersDetail(
         offerDetailURL: String, onSuccess: ((OfferDetail) -> Unit)? = null, onError: ((Throwable) -> Unit)? = null)
     fun getOfferMap(
-        geolocation: Geolocation, onSuccess: ((Bitmap) -> Unit)? = null, onError: ((Throwable) -> Unit)? = null)
+        geolocation: Geolocation?, onSuccess: ((Bitmap) -> Unit)? = null, onError: ((Throwable) -> Unit)? = null)
 }

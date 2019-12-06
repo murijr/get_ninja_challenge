@@ -53,7 +53,7 @@ class OfferRemoteRepository(private val converter: GenericConverter): OfferRepos
     }
 
     override fun getOfferMap(
-        geolocation: Geolocation,
+        geolocation: Geolocation?,
         onSuccess: ((Bitmap) -> Unit)?,
         onError: ((Throwable) -> Unit)?) {
 

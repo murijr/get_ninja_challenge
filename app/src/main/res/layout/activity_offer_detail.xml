@@ -21,15 +21,65 @@
                                                            android:layout_height="match_parent">
 
 
+            <ImageView
+                    android:id="@+id/icon_place3"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_name" app:srcCompat="@drawable/ic_place_unread_24dp"/>
+            <TextView
+                    android:id="@+id/offer_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_place3"
+                    app:layout_constraintStart_toEndOf="@+id/icon_place3" app:layout_constraintTop_toTopOf="@+id/icon_place3"
+                    tools:text="Vila Leopoldina"/>
             <TextView
                     android:id="@+id/offer_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_marginStart="8dp"
-                    android:layout_marginTop="32dp" android:text="TextView"
-                    android:textColor="@android:color/black"
+                    android:layout_marginTop="32dp" android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/guideline" app:layout_constraintTop_toBottomOf="@+id/offer_map"/>
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/offer_map"
+                    tools:text="TextView"/>
+
+            <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp" android:layout_marginEnd="8dp"
+                    android:layerType="software"
+                    android:src="@drawable/dotted_bg" app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.493"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/offer_title"/>
+
+            <ImageView
+                    android:id="@+id/icon_name"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                    app:srcCompat="@drawable/ic_person_unread_24dp"/>
+
+            <TextView
+                    android:id="@+id/offer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold" app:layout_constraintBottom_toBottomOf="@+id/icon_name"
+                    app:layout_constraintStart_toEndOf="@+id/icon_name"
+                    app:layout_constraintTop_toTopOf="@+id/icon_name"
+                    tools:text="Nome do cara"/>
+
             <ImageView android:id="@+id/offer_map" android:layout_width="match_parent" android:layout_height="150dp"
                        android:scaleType="centerCrop"
                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
