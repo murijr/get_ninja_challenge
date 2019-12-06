@@ -34,10 +34,8 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         data?.get(position)?.let {
-            if(it.value?.size == 1) {
-                holder.itemView.offer_info_answer.text = it.value?.first()
-                holder.itemView.offer_info_question.text = it.label
-            }
+            holder.itemView.offer_info_question.text = it.label
+            holder.itemView.offer_info_answer.text = it.value?.joinToString()
         }
     }
 
