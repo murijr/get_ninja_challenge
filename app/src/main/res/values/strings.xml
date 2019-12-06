@@ -6,4 +6,6 @@
     <string name="tab_title_text_accepted">ACEITOS</string>
     <string name="text_distance_km">a %s Km de você</string>
     <string name="text_address">%s - %s</string>
+    <string name="text_label_client_info">Contato do Cliente</string>
+    <string name="accepted_the_order">Aceite o pedido para destravar o contato!</string>
 </resources>

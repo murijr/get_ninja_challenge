@@ -10,6 +10,7 @@ import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Address
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
+import br.com.mandy.getninjachallenge.data.entity.offerdetail.User
 import br.com.mandy.getninjachallenge.data.entity.offers.Offer
 import kotlinx.android.synthetic.main.activity_offer_detail.*
 import org.koin.android.ext.android.inject
@@ -46,6 +47,12 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         renderName(offerDetail.embedded?.user?.name)
         renderAddress(offerDetail.embedded?.address)
         renderOfferInfo(offerDetail.embedded?.info)
+        renderUserInfo(offerDetail.embedded?.user)
+    }
+
+    private fun renderUserInfo(user: User?) {
+        offer_detail_email.text = user?.email
+        offer_detail_tel.text = user?.embedded?.phones?.first()?.number
     }
 
     override fun showOfferMap(map: Bitmap) {
