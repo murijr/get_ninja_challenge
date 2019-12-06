@@ -66,19 +66,20 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
 
     override fun showOfferAcceptedDetail(offerDetail: OfferDetail) {
         showOfferDetail(offerDetail)
-        adapter.updateData(offerDetail.embedded?.info.orEmpty(), true)
-        applyChangesCustomerContact()
-        icon_name.setImageDrawable(getDrawable(R.drawable.ic_person_green_24dp))
-        icon_place3.setImageDrawable(getDrawable(R.drawable.ic_place_green_24dp))
+        applyChangesOfferAccepted(offerDetail)
     }
 
-    private fun applyChangesCustomerContact() {
+    private fun applyChangesOfferAccepted(offerDetail: OfferDetail) {
+        adapter.updateData(offerDetail.embedded?.info.orEmpty(), true)
         view.setBackgroundColor(getColor(R.color.green_client_accepted_color))
         text_label_client_info.setTextColor(getColor(android.R.color.black))
         offer_detail_tel.setTextColor(getColor(android.R.color.black))
         offer_detail_email.setTextColor(getColor(android.R.color.black))
         tel_lock.setImageDrawable(getDrawable(R.drawable.ic_local_phone_black_24dp))
         email_lock.setImageDrawable(getDrawable(R.drawable.ic_email_black_24dp))
+        icon_name.setImageDrawable(getDrawable(R.drawable.ic_person_green_24dp))
+        icon_place3.setImageDrawable(getDrawable(R.drawable.ic_place_green_24dp))
+        text_msg.text = getString(R.string.talk_client)
     }
 
     private fun displayUserInfo(user: User?) {
