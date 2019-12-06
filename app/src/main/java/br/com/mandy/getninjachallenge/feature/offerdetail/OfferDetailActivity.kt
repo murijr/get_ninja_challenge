@@ -68,6 +68,8 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         showOfferDetail(offerDetail)
         adapter.updateData(offerDetail.embedded?.info.orEmpty(), true)
         applyChangesCustomerContact()
+        icon_name.setImageDrawable(getDrawable(R.drawable.ic_person_green_24dp))
+        icon_place3.setImageDrawable(getDrawable(R.drawable.ic_place_green_24dp))
     }
 
     private fun applyChangesCustomerContact() {
