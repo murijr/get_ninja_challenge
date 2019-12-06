@@ -214,6 +214,8 @@
                 android:layout_height="wrap_content" android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5"/>
         <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="#F2F2F2"
                 android:id="@+id/btn_refuse"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -225,7 +227,9 @@
 
 
         <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_accept"
+                android:background="#19EE00"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text_btn_accept"
@@ -237,12 +241,12 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:orientation="vertical"
-                                                    app:layout_constraintGuide_begin="-4dp"/>
+                                                    app:layout_constraintGuide_begin="8dp"/>
         <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline5"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:orientation="vertical"
-                                                    app:layout_constraintGuide_begin="414dp"/>
+                                                    app:layout_constraintGuide_end="8dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
