@@ -3,13 +3,11 @@ package br.com.mandy.getninjachallenge.feature.offerdetail
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.mandy.getninjachallenge.R
-import br.com.mandy.getninjachallenge.data.entity.offerdetail.Geolocation
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 import br.com.mandy.getninjachallenge.data.entity.offers.Offer
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_offer_detail.*
 import org.koin.android.ext.android.inject
 
