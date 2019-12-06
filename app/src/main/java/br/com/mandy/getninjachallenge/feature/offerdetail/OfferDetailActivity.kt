@@ -57,14 +57,29 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     override fun showOfferDetail(offerDetail: OfferDetail) {
-        renderTitle(offerDetail.title)
-        renderName(offerDetail.embedded?.user?.name)
-        renderAddress(offerDetail.embedded?.address)
-        renderOfferInfo(offerDetail.embedded?.info)
-        renderUserInfo(offerDetail.embedded?.user)
+        displayTitle(offerDetail.title)
+        displayName(offerDetail.embedded?.user?.name)
+        displayAddress(offerDetail.embedded?.address)
+        displayOfferInfo(offerDetail.embedded?.info)
+        displayUserInfo(offerDetail.embedded?.user)
     }
 
-    private fun renderUserInfo(user: User?) {
+    override fun showOfferAcceptedDetail(offerDetail: OfferDetail) {
+        showOfferDetail(offerDetail)
+        adapter.updateData(offerDetail.embedded?.info.orEmpty(), true)
+        applyChangesCustomerContact()
+    }
+
+    private fun applyChangesCustomerContact() {
+        view.setBackgroundColor(getColor(R.color.green_client_accepted_color))
+        text_label_client_info.setTextColor(getColor(android.R.color.black))
+        offer_detail_tel.setTextColor(getColor(android.R.color.black))
+        offer_detail_email.setTextColor(getColor(android.R.color.black))
+        tel_lock.setImageDrawable(getDrawable(R.drawable.ic_local_phone_black_24dp))
+        email_lock.setImageDrawable(getDrawable(R.drawable.ic_email_black_24dp))
+    }
+
+    private fun displayUserInfo(user: User?) {
         offer_detail_email.text = user?.email
         offer_detail_tel.text = user?.embedded?.phones?.first()?.number
     }
@@ -77,19 +92,19 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         runOnUiThread { offer_distance.text = String.format(getString(R.string.text_distance_km), distance) }
     }
 
-    private fun renderTitle(title: String?) {
+    private fun displayTitle(title: String?) {
         offer_title.text = title
     }
 
-    private fun renderAddress(address: Address?) {
+    private fun displayAddress(address: Address?) {
         offer_address.text = String.format(getString(R.string.text_address), address?.neighborhood, address?.city)
     }
 
-    private fun renderName(name: String?) {
+    private fun displayName(name: String?) {
         offer_name.text = name
     }
 
-    private fun renderOfferInfo(info: List<Info>?) {
+    private fun displayOfferInfo(info: List<Info>?) {
         adapter.updateData(info.orEmpty())
     }
 

@@ -152,14 +152,14 @@
                 <View android:id="@+id/view" android:layout_width="match_parent"
                       android:layout_height="150dp"
                       android:layout_marginTop="16dp"
-                      android:background="#4DC6FE"
+                      android:background="@color/colorPrimary"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@id/offer_detail_list">
 
                 </View>
                 <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/text_label_client_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
@@ -169,20 +169,20 @@
                         app:layout_constraintStart_toStartOf="@+id/guideline"
                         app:layout_constraintTop_toTopOf="@+id/view"/>
                 <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/tel_lock"
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="24dp"
                         app:layout_constraintStart_toStartOf="@+id/guideline"
-                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/text_label_client_info"
                         app:srcCompat="@drawable/ic_lock_black_24dp"/>
                 <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/email_lock"
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
                         app:layout_constraintStart_toStartOf="@+id/guideline"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/tel_lock"
                         app:srcCompat="@drawable/ic_lock_black_24dp"/>
                 <TextView
                         android:id="@+id/offer_detail_tel"
@@ -190,9 +190,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp" android:textColor="@android:color/white"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                        app:layout_constraintStart_toEndOf="@+id/imageView2"
-                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        app:layout_constraintBottom_toBottomOf="@+id/tel_lock"
+                        app:layout_constraintStart_toEndOf="@+id/tel_lock"
+                        app:layout_constraintTop_toTopOf="@+id/tel_lock"
                         tools:text="(11) 3***-****"/>
                 <TextView
                         android:id="@+id/offer_detail_email"
@@ -200,9 +200,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp" android:textColor="@android:color/white"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-                        app:layout_constraintStart_toEndOf="@+id/imageView5"
-                        app:layout_constraintTop_toTopOf="@+id/imageView5"
+                        app:layout_constraintBottom_toBottomOf="@+id/email_lock"
+                        app:layout_constraintStart_toEndOf="@+id/email_lock"
+                        app:layout_constraintTop_toTopOf="@+id/email_lock"
                         tools:text="b*******@hotmail.com"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

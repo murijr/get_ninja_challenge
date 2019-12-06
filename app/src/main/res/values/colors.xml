@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="app_bar_solicitation_bg_color">#0097F6</color>
     <color name="default_bg_color">#00BAFF</color>
+    <color name="green_client_accepted_color">#C9F57E</color>
+
 </resources>

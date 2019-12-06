@@ -25,9 +25,9 @@ class OfferDetailPresenter(private val offerRepository: OfferRepository,
     }
 
     override fun acceptOffer() {
-        offerDetail?.let {
-            getOfferDetail(it.links?.accept?.href.orEmpty())
-        }
+        offerRepository.getOffersDetail(offerDetail?.links?.accept?.href.orEmpty(), { offerDetail ->
+            this.view?.showOfferAcceptedDetail(offerDetail)
+        })
     }
 
     private fun showMapAtView(geolocation: Geolocation?) {

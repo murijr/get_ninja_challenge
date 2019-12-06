@@ -15,21 +15,12 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
 
     private var data: List<Info>? = null
 
-    private var onAcceptBtnClickCallback: (() -> Unit)? = null
+    private var offerAccepted: Boolean = false
 
-    private var onRefuseBtnClickCallback: (() -> Unit)? = null
-
-    fun updateData(offerDetailInfo: List<Info>) {
+    fun updateData(offerDetailInfo: List<Info>, offerAccepted: Boolean = false) {
         this.data = offerDetailInfo
+        this.offerAccepted = offerAccepted
         notifyDataSetChanged()
-    }
-
-    fun setOnAcceptOfferClick(onAcceptClick: () -> Unit) {
-        this.onAcceptBtnClickCallback = onAcceptClick
-    }
-
-    fun setOnRefuseOfferClick(onRefuseClick: () -> Unit) {
-        this.onRefuseBtnClickCallback = onRefuseClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
@@ -43,6 +34,10 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
         data?.get(position)?.let {
             holder.itemView.offer_info_question.text = it.label
             holder.itemView.offer_info_answer.text = it.value?.joinToString()
+        }
+        if(offerAccepted) {
+            holder.itemView.imageView.setImageDrawable(
+                holder.itemView.context.getDrawable(R.drawable.ic_info_green_24dp))
         }
     }
 
