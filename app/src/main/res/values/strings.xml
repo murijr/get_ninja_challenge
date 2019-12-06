@@ -11,4 +11,6 @@
     <string name="text_btn_refuse">Recusar</string>
     <string name="text_btn_accept">Aceitar</string>
     <string name="talk_client">Fale com o cliente o quanto antes</string>
+    <string name="text_btn_call">Ligar</string>
+    <string name="text_btn_whatsapp">Whatsapp</string>
 </resources>
