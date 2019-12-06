@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -143,6 +144,13 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
 
     private fun displayOfferInfo(info: List<Info>?) {
         adapter.updateData(info.orEmpty())
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finishAfterTransition()
+        }
+        return true
     }
 
     companion object {

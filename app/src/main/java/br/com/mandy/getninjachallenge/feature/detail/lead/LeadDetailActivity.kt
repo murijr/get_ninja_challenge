@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
@@ -24,7 +25,6 @@ import kotlinx.android.synthetic.main.activity_offer_detail.offer_map
 import kotlinx.android.synthetic.main.activity_offer_detail.offer_name
 import kotlinx.android.synthetic.main.activity_offer_detail.offer_title
 import org.koin.android.ext.android.inject
-
 
 class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
 
@@ -108,6 +108,13 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
 
     private fun displayOfferInfo(info: List<Info>?) {
         adapter.updateData(info.orEmpty(), true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finishAfterTransition()
+        }
+        return true
     }
 
     companion object {
