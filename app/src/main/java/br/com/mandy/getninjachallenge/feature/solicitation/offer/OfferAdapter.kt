@@ -1,6 +1,5 @@
 package br.com.mandy.getninjachallenge.feature.solicitation.offer
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,10 +67,10 @@ class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun renderAddress(offer: Offer, holder: ViewHolder) {
         offer.embedded?.request?.embedded?.address?.let { address ->
-            holder.itemView.address.text = "${address.neighborhood} - ${address.city}"
+            holder.itemView.address.text = String.format(
+                holder.itemView.context.getString(R.string.text_address), address.neighborhood, address.city)
         }
     }
 

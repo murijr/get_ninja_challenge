@@ -50,15 +50,13 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         offer_title.text = title
     }
 
-    @SuppressLint("SetTextI18n")
     private fun renderAddress(address: Address?) {
-        offer_address.text = "${address?.neighborhood} - ${address?.city}"
+        offer_address.text = String.format(getString(R.string.text_address), address?.neighborhood, address?.city)
     }
 
     private fun renderName(name: String?) {
         offer_name.text = name
     }
-
 
     companion object {
         private const val EXTRA_OFFER_DETAIL_URL = "EXTRA_OFFER_DETAIL_URL"
