@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Address
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
@@ -15,6 +16,7 @@ import org.koin.android.ext.android.inject
 class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
 
     private val presenter: OfferDetailContract.Presenter by inject()
+    private val adapter: OfferDetailInfoValueAdapter by inject()
 
     private val offerDetailURL: String by lazy {
         this.intent.getStringExtra(EXTRA_OFFER_DETAIL_URL)
@@ -27,8 +29,14 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     private fun setup() {
+        configureAdapter()
         presenter.takeView(this)
         presenter.getOfferDetail(offerDetailURL)
+    }
+
+    private fun configureAdapter() {
+        offer_detail_list.adapter = adapter
+        offer_detail_list.layoutManager = LinearLayoutManager(this)
     }
 
     override fun showOfferDetail(offerDetail: OfferDetail) {

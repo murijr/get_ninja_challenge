@@ -4,4 +4,5 @@ import org.koin.dsl.module
 
 val offerDetailModule = module {
     factory<OfferDetailContract.Presenter> { OfferDetailPresenter(get()) }
+    factory { OfferDetailInfoValueAdapter() }
 }

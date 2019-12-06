@@ -36,15 +36,5 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
         }
     }
 
-    private fun handleOnClick(offer: Offer, holder: ViewHolder) {
-        holder.itemView.card.setOnClickListener {
-            onClickCallback?.invoke(offer)
-        }
-    }
-
-    private fun renderTitle(offer: Offer, holder: ViewHolder) {
-        holder.itemView.offer_title.text = offer.embedded?.request?.title
-    }
-
     class ViewHolder(view: View): RecyclerView.ViewHolder(view)
 }
