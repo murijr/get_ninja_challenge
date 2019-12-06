@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.offerdetail
+package br.com.mandy.getninjachallenge.feature.detail.offer
 
 import org.koin.dsl.module
 

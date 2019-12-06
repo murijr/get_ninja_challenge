@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.offerdetail
+package br.com.mandy.getninjachallenge.feature.detail.offer
 
 import android.view.LayoutInflater
 import android.view.View

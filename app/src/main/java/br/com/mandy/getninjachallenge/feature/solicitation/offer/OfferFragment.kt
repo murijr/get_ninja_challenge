@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offers.Offers
-import br.com.mandy.getninjachallenge.feature.offerdetail.OfferDetailActivity
+import br.com.mandy.getninjachallenge.feature.detail.offer.OfferDetailActivity
 import kotlinx.android.synthetic.main.fragment_solicitation_offers.*
 import org.koin.android.ext.android.inject
 

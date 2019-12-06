@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.offerdetail
+package br.com.mandy.getninjachallenge.feature.detail.offer
 
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
 import com.google.gson.JsonDeserializationContext

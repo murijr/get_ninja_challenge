@@ -16,7 +16,7 @@
         <activity
                 android:parentActivityName=".feature.solicitation.SolicitationActivity"
                 android:label="@string/title_activity_offer_detail"
-                android:name=".feature.offerdetail.OfferDetailActivity"/>
+                android:name="br.com.mandy.getninjachallenge.feature.detail.offer.OfferDetailActivity"/>
         <activity
                 android:name=".feature.solicitation.SolicitationActivity"
                 android:label="@string/title_activity_solicitation"

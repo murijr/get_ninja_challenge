@@ -1,4 +1,4 @@
-package br.com.mandy.getninjachallenge.feature.offerdetail
+package br.com.mandy.getninjachallenge.feature.detail.offer
 
 import android.content.Context
 import android.content.Intent

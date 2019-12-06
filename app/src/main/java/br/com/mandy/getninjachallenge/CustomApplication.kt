@@ -4,7 +4,7 @@ import android.app.Application
 import br.com.mandy.getninjachallenge.common.di.converterModule
 import br.com.mandy.getninjachallenge.common.di.networkModule
 import br.com.mandy.getninjachallenge.common.di.repositoryModule
-import br.com.mandy.getninjachallenge.feature.offerdetail.offerDetailModule
+import br.com.mandy.getninjachallenge.feature.detail.offer.offerDetailModule
 import br.com.mandy.getninjachallenge.feature.solicitation.lead.leadModule
 import br.com.mandy.getninjachallenge.feature.solicitation.offer.offerModule
 import com.androidnetworking.AndroidNetworking
