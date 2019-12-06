@@ -4,7 +4,7 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:id="@+id/constraintLayout"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="wrap_content"
+                                                   android:layout_height="70dp"
                                                    android:background="@android:color/transparent">
 
 
@@ -26,12 +26,11 @@
     <TextView
             android:id="@+id/offer_info_answer"
             android:layout_width="wrap_content"
-            tools:text="aaaaaaa"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/offer_info_question"
             app:layout_constraintStart_toStartOf="@+id/offer_info_question"
-            app:layout_constraintTop_toBottomOf="@+id/offer_info_question"/>
+            app:layout_constraintTop_toBottomOf="@+id/offer_info_question"
+            tools:text="aaaaaaa"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

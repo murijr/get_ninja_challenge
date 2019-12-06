@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.mandy.getninjachallenge.R
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Info
 import br.com.mandy.getninjachallenge.data.entity.offers.Offer
+import kotlinx.android.synthetic.main.layout_offer_detail_info_item.view.*
 import kotlinx.android.synthetic.main.layout_offers_item.view.*
 
 class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdapter.ViewHolder>() {
@@ -32,7 +33,11 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
     override fun getItemCount() = data?.size ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        data?.let {
+        data?.get(position)?.let {
+            if(it.value?.size == 1) {
+                holder.itemView.offer_info_answer.text = it.value?.first()
+                holder.itemView.offer_info_question.text = it.label
+            }
         }
     }
 
