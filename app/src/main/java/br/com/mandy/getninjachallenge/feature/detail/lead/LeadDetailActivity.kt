@@ -33,7 +33,11 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
     private val externalCall: ExternalCall by inject()
 
     private val leadDetailURL: String by lazy {
-        this.intent.getStringExtra(EXTRA_OFFER_DETAIL_URL)
+        this.intent.getStringExtra(EXTRA_LEAD_DETAIL_URL)
+    }
+
+    private val leadTitle: String by lazy {
+        this.intent.getStringExtra(EXTRA_TITLE)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +54,7 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
     }
 
     private fun handleUI() {
+        title = leadTitle
         handleOnClickDialBtn()
         handleOnClickWhatsAppBtn()
     }
@@ -106,10 +111,12 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
     }
 
     companion object {
-        private const val EXTRA_OFFER_DETAIL_URL = "EXTRA_OFFER_DETAIL_URL"
+        private const val EXTRA_LEAD_DETAIL_URL = "EXTRA_LEAD_DETAIL_URL"
+        private const val EXTRA_TITLE = "EXTRA_TITLE"
         fun startActivity(context: Context, lead: Lead) {
             val intent = Intent(context, LeadDetailActivity::class.java)
-            intent.putExtra(EXTRA_OFFER_DETAIL_URL, lead.links?.self?.href)
+            intent.putExtra(EXTRA_LEAD_DETAIL_URL, lead.links?.self?.href)
+            intent.putExtra(EXTRA_TITLE, lead.embedded?.request?.title)
             context.startActivity(intent)
         }
     }
