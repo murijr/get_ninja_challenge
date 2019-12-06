@@ -31,10 +31,15 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
     }
 
     override fun showOfferDetail(offerDetail: OfferDetail) {
+        renderTitle(offerDetail.title)
     }
 
     override fun showOfferMap(map: Bitmap) {
         runOnUiThread { offer_map.setImageBitmap(map) }
+    }
+
+    private fun renderTitle(title: String?) {
+        offer_title.text = title
     }
 
     companion object {

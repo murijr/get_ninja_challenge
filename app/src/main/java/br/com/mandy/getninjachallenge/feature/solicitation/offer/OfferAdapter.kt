@@ -54,7 +54,7 @@ class OfferAdapter: RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
     }
 
     private fun renderTitle(offer: Offer, holder: ViewHolder) {
-        holder.itemView.title.text = offer.embedded?.request?.title
+        holder.itemView.offer_title.text = offer.embedded?.request?.title
     }
 
     private fun renderUserName(offer: Offer, holder: ViewHolder) {

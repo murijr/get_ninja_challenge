@@ -43,7 +43,7 @@ class OfferDetailInfoValueAdapter: RecyclerView.Adapter<OfferDetailInfoValueAdap
     }
 
     private fun renderTitle(offer: Offer, holder: ViewHolder) {
-        holder.itemView.title.text = offer.embedded?.request?.title
+        holder.itemView.offer_title.text = offer.embedded?.request?.title
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view)
