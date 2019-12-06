@@ -26,7 +26,7 @@ class LeadDetailActivity : AppCompatActivity(), LeadDetailContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_offer_detail)
+        setContentView(R.layout.activity_lead_detail)
         setup()
     }
 

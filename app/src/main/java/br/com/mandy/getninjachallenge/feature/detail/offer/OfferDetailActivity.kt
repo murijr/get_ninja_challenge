@@ -81,7 +81,6 @@ class OfferDetailActivity : AppCompatActivity(), OfferDetailContract.View {
         icon_name.setImageDrawable(getDrawable(R.drawable.ic_person_green_24dp))
         icon_place3.setImageDrawable(getDrawable(R.drawable.ic_place_green_24dp))
         text_msg.text = getString(R.string.talk_client)
-
         group_btns_offer_detail.visibility = View.GONE
         group_btns_offer_detail_accepted.visibility = View.VISIBLE
     }

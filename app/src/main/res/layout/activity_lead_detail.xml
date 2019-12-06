@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@color/default_bg_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".feature.detail.offer.LeadDetailActivity">
+
+        <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                                           android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                           android:layout_marginEnd="8dp"
+                                           android:layout_marginBottom="70dp"
+                                           app:layout_constraintBottom_toBottomOf="parent"
+                                           app:layout_constraintEnd_toEndOf="parent"
+                                           app:layout_constraintStart_toStartOf="parent"
+                                           app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content">
+
+
+                <ImageView
+                        android:id="@+id/icon_place3"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/icon_name"
+                        app:srcCompat="@drawable/ic_place_green_24dp"/>
+                <TextView
+                        android:id="@+id/offer_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/icon_place3"
+                        app:layout_constraintStart_toEndOf="@+id/icon_place3"
+                        app:layout_constraintTop_toTopOf="@+id/icon_place3"
+                        tools:text="Vila Leopoldina"/>
+                <TextView
+                        android:id="@+id/offer_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp" android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/offer_map"
+                        tools:text="TextView"/>
+
+                <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp" android:layout_marginEnd="8dp"
+                        android:layerType="software"
+                        android:src="@drawable/dotted_bg" app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/offer_title"/>
+
+                <TextView
+                        android:id="@+id/text_msg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/talk_client"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@id/view"/>
+                <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layerType="software"
+                        android:src="@drawable/dotted_bg"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/offer_distance"/>
+
+                <ImageView
+                        android:id="@+id/icon_name"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                        app:srcCompat="@drawable/ic_person_green_24dp"/>
+
+                <TextView
+                        android:id="@+id/offer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold" app:layout_constraintBottom_toBottomOf="@+id/icon_name"
+                        app:layout_constraintStart_toEndOf="@+id/icon_name"
+                        app:layout_constraintTop_toTopOf="@+id/icon_name"
+                        tools:text="Nome do cara"/>
+
+                <ImageView android:id="@+id/offer_map" android:layout_width="match_parent" android:layout_height="150dp"
+                           android:scaleType="centerCrop"
+                           app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                           app:layout_constraintStart_toStartOf="@+id/guideline"
+                           app:layout_constraintTop_toTopOf="parent" tools:src="@android:color/holo_red_dark"/>
+
+
+                <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:orientation="vertical"
+                                                            app:layout_constraintGuide_begin="@dimen/default_layout_margin_left_right"/>
+                <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline2"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:orientation="vertical"
+                                                            app:layout_constraintGuide_end="@dimen/default_layout_margin_left_right"/>
+                <TextView
+                        android:id="@+id/offer_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/offer_address"
+                        app:layout_constraintTop_toBottomOf="@+id/offer_address"
+                        tools:text="100"/>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/offer_detail_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintHorizontal_bias="0.492"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4"/>
+
+
+                <View android:id="@+id/view" android:layout_width="match_parent"
+                      android:layout_height="150dp"
+                      android:layout_marginTop="16dp"
+                      android:background="@color/green_client_accepted_color"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/offer_detail_list">
+
+                </View>
+                <TextView
+                        android:id="@+id/text_label_client_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/text_label_client_info" android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toTopOf="@+id/view"/>
+                <ImageView
+                        android:id="@+id/tel_lock"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/text_label_client_info"
+                        app:srcCompat="@drawable/ic_local_phone_black_24dp"/>
+                <ImageView
+                        android:id="@+id/email_lock"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@+id/tel_lock"
+                        app:srcCompat="@drawable/ic_email_black_24dp"/>
+                <TextView
+                        android:id="@+id/offer_detail_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp" android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tel_lock"
+                        app:layout_constraintStart_toEndOf="@+id/tel_lock"
+                        app:layout_constraintTop_toTopOf="@+id/tel_lock"
+                        tools:text="(11) 3***-****"/>
+                <TextView
+                        android:id="@+id/offer_detail_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp" android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/email_lock"
+                        app:layout_constraintStart_toEndOf="@+id/email_lock"
+                        app:layout_constraintTop_toTopOf="@+id/email_lock"
+                        tools:text="b*******@hotmail.com"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+        <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@android:color/white"
+                android:id="@+id/btn_call"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/text_btn_call"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                tools:layout_editor_absoluteY="813dp"/>
+
+
+        <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/btn_whatsapp"
+                android:background="@android:color/white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_btn_whatsapp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline3" tools:layout_editor_absoluteY="813dp"/>
+
+        <androidx.constraintlayout.widget.Group android:id="@+id/group_btns_offer_detail_accepted"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                app:constraint_referenced_ids="btn_call,btn_whatsapp"/>
+
+
+        <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline4"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical"
+                                                    app:layout_constraintGuide_begin="8dp"/>
+        <androidx.constraintlayout.widget.Guideline android:id="@+id/guideline5"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical"
+                                                    app:layout_constraintGuide_end="8dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
