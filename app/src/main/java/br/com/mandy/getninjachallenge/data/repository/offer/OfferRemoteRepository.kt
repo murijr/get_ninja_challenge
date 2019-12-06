@@ -1,7 +1,10 @@
 package br.com.mandy.getninjachallenge.data.repository.offer
 
 import android.graphics.Bitmap
+import br.com.mandy.getninjachallenge.common.LEADS_LIST_URL
+import br.com.mandy.getninjachallenge.common.OFFERS_LIST_URL
 import br.com.mandy.getninjachallenge.common.converter.GenericConverter
+import br.com.mandy.getninjachallenge.data.entity.leads.Leads
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.Geolocation
 import br.com.mandy.getninjachallenge.data.entity.offerdetail.OfferDetail
 import br.com.mandy.getninjachallenge.data.entity.offers.Offers
@@ -17,7 +20,7 @@ import kotlin.concurrent.thread
 class OfferRemoteRepository(private val converter: GenericConverter): OfferRepository {
 
     override fun getOffers(onSuccess: ((Offers) -> Unit)?, onError: ((Throwable) -> Unit)?) {
-        AndroidNetworking.get("https://testemobile.getninjas.com.br/offers")
+        AndroidNetworking.get(OFFERS_LIST_URL)
             .setTag("getOffers")
             .setPriority(Priority.LOW)
             .build()
@@ -25,6 +28,23 @@ class OfferRemoteRepository(private val converter: GenericConverter): OfferRepos
                 override fun onResponse(response: JSONObject?) {
                     val offers = converter.from<Offers>(response)
                     onSuccess?.invoke(offers)
+                }
+
+                override fun onError(anError: ANError?) {
+                    onError?.invoke(anError as Exception)
+                }
+            })
+    }
+
+    override fun getLeads(onSuccess: ((Leads) -> Unit)?, onError: ((Throwable) -> Unit)?) {
+        AndroidNetworking.get(LEADS_LIST_URL)
+            .setTag("getLeads")
+            .setPriority(Priority.LOW)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject?) {
+                    val leads = converter.from<Leads>(response)
+                    onSuccess?.invoke(leads)
                 }
 
                 override fun onError(anError: ANError?) {
